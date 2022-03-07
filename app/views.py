@@ -1,4 +1,3 @@
-# Important imports
 from app import app
 from flask import request, render_template, redirect, url_for
 import os
@@ -8,10 +7,8 @@ import cv2
 import numpy as np
 from PIL import Image
 
-# Adding path to config
 app.config['INITIAL_FILE_UPLOADS'] = 'app/static/uploads'
 
-# Route to home page
 @app.route("/", methods=["GET", "POST"])
 def index():
 
@@ -63,6 +60,5 @@ def index():
 			return render_template('index.html', full_filename = full_filename)
 
        
-# Main function
 if __name__ == '__main__':
     app.run(debug=True)
